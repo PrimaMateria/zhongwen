@@ -1,0 +1,32 @@
+[
+        {
+            "characters": ["一"],
+            "pinyin": "yī",
+            "translation": "one"
+        },
+        {
+            "characters": ["丨"],
+            "pinyin": "gǔn",
+            "translation": "line"
+        },
+        {
+            "characters": ["丶"],
+            "pinyin": "zhǔ",
+            "translation": "dot"
+        },
+        {
+            "characters": ["丿"],
+            "pinyin": "piě",
+            "translation": "slash"
+        },
+        {
+            "characters": ["乙", "乚"],
+            "pinyin": "yǐ",
+            "translation": "second"
+        },
+        {
+            "characters": ["亅","了"],
+            "pinyin": "jué",
+            "translation": "hook"
+        }
+]

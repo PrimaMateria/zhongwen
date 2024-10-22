@@ -1,0 +1,9 @@
+.hanziCharacterBox {
+  border: 1px solid #DDD;
+}
+.hanziContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
