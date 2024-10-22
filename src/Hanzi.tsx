@@ -11,7 +11,12 @@ export function Hanzi(props: HanziProps) {
   const [writer, setWriter] = useState<HanziWriter>();
 
   return (
-    <div className="hanziContainer">
+    <div
+      className="hanziContainer"
+      onClick={() => {
+        writer?.animateCharacter();
+      }}
+    >
       <svg
         className="hanziCharacterBox"
         xmlns="http://www.w3.org/2000/svg"
@@ -34,13 +39,6 @@ export function Hanzi(props: HanziProps) {
         <line x1="50" y1="0" x2="50" y2="100" stroke="#DDD" />
         <line x1="0" y1="50" x2="100" y2="50" stroke="#DDD" />
       </svg>
-      <button
-        onClick={() => {
-          writer?.animateCharacter();
-        }}
-      >
-        animate
-      </button>
     </div>
   );
 }
