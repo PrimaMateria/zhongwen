@@ -1,6 +1,6 @@
 import "./App.css";
 import { Hanzi } from "./Hanzi";
-import radicals from "./radicals.json";
+import radicalGroups from "./radicals.json";
 
 function App() {
   return (
@@ -8,18 +8,28 @@ function App() {
       <h1>Chinese radicals</h1>
       <table>
         <tbody>
-          {radicals.map((radical) => (
-            <tr>
-              <td>
-                <div className="characters">
-                  {radical.characters.map((character) => (
-                    <Hanzi character={character} />
-                  ))}
-                </div>
-              </td>
-              <td>{radical.pinyin}</td>
-              <td>{radical.translation}</td>
-            </tr>
+          {radicalGroups.map((radicalGroup) => (
+            <>
+              <tr>
+                <td colSpan={3} className="radicalGroup">
+                  <h2>Strokes: {radicalGroup.stroke}</h2>
+                </td>
+              </tr>
+
+              {radicalGroup.radicals.map((radical) => (
+                <tr>
+                  <td>{radical.pinyin}</td>
+                  <td>
+                    <div className="characters">
+                      {radical.characters.map((character) => (
+                        <Hanzi character={character} />
+                      ))}
+                    </div>
+                  </td>
+                  <td>{radical.translation}</td>
+                </tr>
+              ))}
+            </>
           ))}
         </tbody>
       </table>
