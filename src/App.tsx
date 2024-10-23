@@ -1,5 +1,7 @@
+import { Fragment } from "react";
 import "./App.css";
 import { Hanzi } from "./Hanzi";
+import { Pinyin } from "./Pinyin";
 import radicalGroups from "./radicals.json";
 
 function App() {
@@ -9,27 +11,35 @@ function App() {
       <table>
         <tbody>
           {radicalGroups.map((radicalGroup) => (
-            <>
+            <Fragment key={`stroke${radicalGroup.stroke}`}>
               <tr>
-                <td colSpan={3} className="radicalGroup">
+                <td colSpan={4} className="radicalGroup">
                   <h2>Strokes: {radicalGroup.stroke}</h2>
                 </td>
               </tr>
 
               {radicalGroup.radicals.map((radical) => (
-                <tr>
-                  <td>{radical.pinyin}</td>
+                <tr key={`row${radical.characters[0]}`}>
+                  <td>
+                    <Pinyin character={radical.characters[0]} />
+                  </td>
+                  <td>
+                    <div className="characters">{radical.characters}</div>
+                  </td>
                   <td>
                     <div className="characters">
                       {radical.characters.map((character) => (
-                        <Hanzi character={character} />
+                        <Hanzi
+                          key={`character${character}`}
+                          character={character}
+                        />
                       ))}
                     </div>
                   </td>
                   <td>{radical.translation}</td>
                 </tr>
               ))}
-            </>
+            </Fragment>
           ))}
         </tbody>
       </table>

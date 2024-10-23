@@ -1,6 +1,7 @@
 import "./Hanzi.css";
 import HanziWriter from "hanzi-writer";
 import { useState } from "react";
+import { getToneColor } from "./toneColor.util";
 
 type HanziProps = {
   character: string;
@@ -29,6 +30,7 @@ export function Hanzi(props: HanziProps) {
               width: 100,
               height: 100,
               padding: 5,
+              strokeColor: getToneColor(character),
             });
             setWriter(writer);
           }
