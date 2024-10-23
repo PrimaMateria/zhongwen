@@ -4,7 +4,7 @@
 }
 
 table {
-  font-size: 24px;
+  font-size: 16px;
 }
 
 td {
@@ -20,6 +20,7 @@ td.radicalGroup {
 td.radicalGroup h2 {
   font-size: 24px;
   margin: 0;
+  margin-top: 32px;
 }
 
 tr td:nth-child(1) {
